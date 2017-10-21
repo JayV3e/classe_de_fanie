@@ -41,4 +41,4 @@ Thumbs.db
 *.pyc
 
 # Sensible info
-/site_web/site_web/settings_secret.py
+./src/site_web/settings_secret.py
