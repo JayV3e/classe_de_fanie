@@ -12,7 +12,7 @@ class Eleve(models.Model):
     prenom_parents_2 = models.TextField(max_length=50)
     telephone_parents_2 = models.TextField(max_length=50)
     courriel_parents_2 = models.TextField(max_length=75)
-    photo = models.TextField(max_length=75, default="none")
+    photo = models.TextField(max_length=150)
 
     def __str__(self):
         return self.prenom_eleve + " " + self.nom_eleve

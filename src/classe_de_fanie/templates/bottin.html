@@ -2,22 +2,26 @@
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
   <!-- Indicators -->
   <ol class="carousel-indicators">
-    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-    <li data-target="#myCarousel" data-slide-to="1"></li>
-    <li data-target="#myCarousel" data-slide-to="2"></li>
+      {% for eleve in eleves %}
+      {% if forloop.first %}
+         <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" class="active"></li>
+      {% else %}
+    <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}"></li>
+      {% endif %}
+      {% endfor %}
   </ol>
 
   <!-- Wrapper for slides -->
   <div class="carousel-inner">
 
-      {% for eleve1 in elevee %}
+      {% for eleve in eleves %}
       {% if forloop.first %}
       <div class="item active">
           {% else %}
           <div class="item">
               {% endif %}
-
-       <img src="{{ eleve1.photo }}" alt="/img/default.jpg">
+              {{eleve.prenom_eleve}}
+       <img src="{{eleve.photo}}" alt="/static/admin/img/photos/Eva.JPG">
       </div>
     {% endfor %}
   <!-- Left and right controls -->
