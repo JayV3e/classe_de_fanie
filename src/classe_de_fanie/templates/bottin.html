@@ -21,30 +21,32 @@
               <div class="item">
                   {% endif %}
 
-       <img src="{{eleve.photo}}" alt="/static/admin/img/photos/Eva.JPG">
+       <img class="img-responsive" src="{{eleve.photo}}" alt="">
 
-            <div class="carousel-caption">
+            <div class="carousel-caption textoverimage hidden-sm hidden-xs">
 
                     <div>
                         <h2>{{eleve.prenom_eleve}} {{eleve.nom_eleve}}</h2>
                     </div>
                 <div class="container-fluid">
                  <div class="row">
-                        <div class="col-lg-6">
-                            <h4>{{eleve.prenom_parents_1}} {{eleve.nom_parents_1}}</h4>
-                            <h5>{{eleve.telephone_parents_1}}</h5>
-                            <h5>{{eleve.courriel_parents_1}}</h5>
+                        <div class="col-md-4 ">
+                            <p>{{eleve.prenom_parents_1}} {{eleve.nom_parents_1}}</p>
+                            <a href ="tel:{{eleve.telephone_parents_1}}">{{eleve.telephone_parents_1}}</a>
+                            <a href="mailto:{{eleve.courriel_parents_1}}">{{eleve.courriel_parents_1}}</a>
                         </div>
-                        <div class="col-lg-6">
-                            <h4>{{eleve.prenom_parents_2}} {{eleve.nom_parents_2}}</h4>
-                            <h5>{{eleve.telephone_parents_2}}</h5>
-                            <h5>{{eleve.courriel_parents_2}}</h5>
+                     <div class="col-md-4 "></div>
+                        <div class="col-md-4 ">
+                            <p>{{eleve.prenom_parents_2}} {{eleve.nom_parents_2}}</p>
+                            <a href ="tel:{{eleve.telephone_parents_2}}">{{eleve.telephone_parents_2}}</a>
+                            <a href="mailto:{{eleve.courriel_parents_2}}">{{eleve.courriel_parents_2}}</a>
                         </div>
                  </div>
                 </div>
             </div>
             </div>
     {% endfor %}
+
 </div>
   <!-- Left and right controls -->
   <a class="left carousel-control" href="#myCarousel" data-slide="prev">
@@ -56,3 +58,52 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
+
+    <!-- Afficher les infos sous la photo pour les petits ecrans -->
+    {% for eleve in eleves %}
+
+
+          {% if forloop.first %}
+          <div class="carousel-inner low-carousel collapse in hidden-md hidden-lg" id="{{ forloop.counter0 }}">
+              {% else %}
+              <div class="carousel-inner low-carousel collapse hidden-md hidden-lg" id="{{ forloop.counter0 }}">
+                  {% endif %}
+
+
+
+
+                    <div>
+                        <p class="text-center"><strong>{{eleve.prenom_eleve}} {{eleve.nom_eleve}}</strong></p>
+                    </div>
+                <div class="container-fluid">
+                 <div class="row">
+                        <div class="col-xs-5 ">
+                            <p class="text-center">{{eleve.prenom_parents_1}} {{eleve.nom_parents_1}}</p>
+                            <a href ="tel:{{eleve.telephone_parents_1}}"><p class="text-center">{{eleve.telephone_parents_1}}</p></a>
+                            <a href="mailto:{{eleve.courriel_parents_1}}"><p class="text-center">{{eleve.courriel_parents_1}}</p></a>
+                        </div>
+                     <div class="col-xs-2 "></div>
+                        <div class="col-xs-5 ">
+                            <p class="text-center">{{eleve.prenom_parents_2}} {{eleve.nom_parents_2}}</p>
+                            <a href ="tel:{{eleve.telephone_parents_2}}"><p class="text-center">{{eleve.telephone_parents_2}}</p></a>
+                            <a href="mailto:{{eleve.courriel_parents_2}}"><p class="text-center">{{eleve.courriel_parents_2}}</p></a>
+                        </div>
+                 </div>
+                </div>
+            </div>
+
+    {% endfor %}
+
+              <script>
+
+                  $('#myCarousel').bind('slide.bs.carousel', function (e) {
+                        oldIndex = $(".active", e.target).index();
+                        $('#' + oldIndex).toggleClass('in');
+                        });
+                  $('#myCarousel').bind('slid.bs.carousel', function (e) {
+                        newIndex = $(".active", e.target).index();
+                        $('#' + newIndex).toggleClass('in');
+                        });
+
+
+              </script>
