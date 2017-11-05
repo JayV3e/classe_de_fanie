@@ -1,15 +1,15 @@
 
 <div id="myCarousel" class="carousel slide" data-interval="false">
   <!-- Indicators -->
-      <ol class="carousel-indicators">
-          {% for eleve in eleves %}
-          {% if forloop.first %}
-             <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" class="active"></li>
-          {% else %}
-        <li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}"></li>
-          {% endif %}
-          {% endfor %}
-      </ol>
+      <!--<ol class="carousel-indicators">-->
+          <!--{% for eleve in eleves %}-->
+          <!--{% if forloop.first %}-->
+             <!--<li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}" class="active"></li>-->
+          <!--{% else %}-->
+        <!--<li data-target="#myCarousel" data-slide-to="{{ forloop.counter0 }}"></li>-->
+          <!--{% endif %}-->
+          <!--{% endfor %}-->
+      <!--</ol>-->
 
   <!-- Wrapper for slides-->
   <div class="carousel-inner">
