@@ -1,3 +1,6 @@
+.textoverimage a:link {
+    color: white;
+}
 
 #myCarousel {
     margin-top: 15px;

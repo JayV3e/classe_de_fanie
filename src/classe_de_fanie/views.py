@@ -5,6 +5,6 @@ from .models import Eleve
 # Create your views here.
 def index(request):
     template = 'index.html'
-    eleves = Eleve.objects.all()
+    eleves = Eleve.objects.order_by('prenom_eleve')
 
     return render(request, template, {'eleves': eleves})
