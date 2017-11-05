@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'lockdown'
     'classe_de_fanie.apps.ClasseDeFanieConfig',
 ]
 
@@ -49,6 +50,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'lockdown.middleware.LockdownMiddleware',
+
 ]
 
 ROOT_URLCONF = 'site_web.urls'
@@ -127,5 +130,7 @@ STATICFILES_DIRS = ( os.path.join('static'), )
 
 MEDIA_ROOT = '/Users/jerome/classe_de_fanie/src/photos_des_eleves/'
 MEDIA_URL = 'photos_des_eleves/'
+
+LOCKDOWN_PASSWORDS = ('guimauve', 'Guimauve', 'GUIMAUVE',)
 
 

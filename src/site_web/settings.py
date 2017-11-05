@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'classe_de_fanie.apps.ClasseDeFanieConfig',
+    'lockdown',
 ]
 
 MIDDLEWARE = [
@@ -125,3 +126,5 @@ USE_TZ = True
 STATIC_ROOT = ''
 STATIC_URL = '/static/'
 STATICFILES_DIRS = ( os.path.join('static'), )
+
+LOCKDOWN_PASSWORDS = ('guimauve','Guimauve','GUIMAUVE',)

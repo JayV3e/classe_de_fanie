@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title></title>
+</head>
+<body>
+<div id="lockdown">
+  <h2>Entrer le mot de passe</h2>
+
+  <p>Il s'agit du nom de l'animal de compagnie de la classe.</p>
+
+  {% if form %}
+  <form action="" method="post">{% csrf_token %}
+    {{ form.as_p }}
+    <p><input type="submit" value="Preview" /></p>
+  </form>
+  {% endif %}
+
+</div>
+</body>
+</html>
