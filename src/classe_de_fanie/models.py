@@ -8,10 +8,10 @@ class Eleve(models.Model):
     prenom_parents_1 = models.TextField(max_length=50)
     telephone_parents_1 = models.TextField(max_length=50)
     courriel_parents_1 = models.TextField(max_length=75)
-    nom_parents_2 = models.TextField(max_length=50)
-    prenom_parents_2 = models.TextField(max_length=50)
-    telephone_parents_2 = models.TextField(max_length=50)
-    courriel_parents_2 = models.TextField(max_length=75)
+    nom_parents_2 = models.TextField(max_length=50,blank=True)
+    prenom_parents_2 = models.TextField(max_length=50,blank=True)
+    telephone_parents_2 = models.TextField(max_length=50,blank=True)
+    courriel_parents_2 = models.TextField(max_length=75,blank=True)
     photo = models.TextField(max_length=150)
 
     def __str__(self):
