@@ -8,6 +8,7 @@ from lockdown.decorators import lockdown
 @lockdown()
 def index(request):
     template = 'index.html'
-    eleves = Eleve.objects.order_by('prenom_eleve')
+    eleves = Eleve.objects.order_by('non_enseignant','prenom_eleve')
+
 
     return render(request, template, {'eleves': eleves})
