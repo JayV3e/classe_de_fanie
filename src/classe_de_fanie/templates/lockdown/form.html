@@ -5,10 +5,10 @@
 </head>
 <body>
 <div id="lockdown">
-  <h2>Entrer le mot de passe</h2>
+  <h1>Entrer le mot de passe</h1>
 
-  <p>Il s'agit du nom de l'animal de compagnie de la classe.</p>
-
+  <h3>Il s'agit du nom de l'animal de compagnie de la classe.</h3>
+  <h5>Je dois mettre un mot de passe afin d'éviter le spam téléphonique et courriel ... merci de votre compréhension</h5>
   {% if form %}
   <form action="" method="post">{% csrf_token %}
     {{ form.as_p }}
