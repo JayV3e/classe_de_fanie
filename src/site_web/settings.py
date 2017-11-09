@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'classe_de_fanie.apps.ClasseDeFanieConfig',
-    #'lockdown',
+    'lockdown',
 ]
 
 MIDDLEWARE = [
